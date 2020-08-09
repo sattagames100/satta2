@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+//   document.write(utc);
+  document.getElementById('txt').innerHTML =
+  utc + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+<style>
+  .blinking{
+    animation:blinkingText 0.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #00CED1;    }
+    49%{    color: #00CED1; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #00CED1;    }
+}
+.black{
+   color: blue
+}
+</style>
+<body onload="startTime()" style="background-color:black;">
+  <center><div class="container" style="color:white; background-color:black;"><div class="w3-container w3-card">
+    <h2><div style="font-size:25px; color: #EEE8AA" id="txt"></div></h2>
+    <h3><div style="color:red"><br \>New Delhi</div>
+    <div><br \><br \><span class="blinking">Satta 100</span>
+    </br><span><h4>(10:00 AM)</h4></span><br>
+    <span style="color:#00FF00">[ 1234 ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 9987 ]</span>
+    </div></h3>
+    </div>
+    </div>
+    <br>
+    <img src="download.png" height="45px" width="97px">
+  </center>
+
+</body>
+</html>
